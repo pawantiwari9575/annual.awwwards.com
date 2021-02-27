@@ -1,0 +1,556 @@
+@font-face{
+  src: url(./Love-Regular.1e9f7e9.ttf);
+  font-family: "Love";
+}
+
+@font-face{
+  src: url(./SteinbeckRegular.2ddad8b.ttf);
+  font-family: "Steinbeck";
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: "Steinbeck";
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#slidingNavbar{
+  position: fixed;
+  top: 0;
+  left: -100%;
+  z-index: 9999999;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
+  background-color: black;
+}
+
+#slidingNavbar a{
+  color: #fff;
+  font-size: 45px;
+  text-decoration: none;
+  font-family: "Love";
+  text-transform: uppercase;
+  margin-top: 40px;
+}
+
+#slidingNavbar i{
+  position: absolute;
+  right: 10%;
+  bottom: 10%;
+  width: 50px;
+  font-size: 23px;
+  height: 50px;
+  border-radius: 50%;
+  font-weight: 500;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body{
+  background-color: black;
+}
+
+nav {
+  position: fixed;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  backdrop-filter: blur(10px);
+  width: 100%;
+  height: 60px;
+  background-color: rgba(0, 0, 0, 0.397);
+}
+
+nav #left {
+  display: flex;
+}
+
+nav a {
+  color: #fff;
+  font-size: 13px;
+  text-decoration: none;
+  margin-right: 30px;
+  text-transform: uppercase;
+}
+
+#catg {
+  display: flex;
+  align-items: center;
+}
+
+#catg i {
+  color: #fff;
+  margin-top: 4px;
+  margin-right: 4px;
+  font-size: 12px;
+}
+
+#center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#landing {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+canvas {
+  width: 100%;
+}
+
+#hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+
+#ovrlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-top: 90px;
+  pointer-events: none;
+  width: 100%;
+  min-height: inherit;
+}
+
+#ovrlay h1 {
+  text-align: center;
+  font-size: 120px;
+  text-transform: uppercase;
+  color: #fff;
+  line-height: 100px;
+  font-family: "Love";
+  font-weight: 100;
+}
+
+#ovrlay span {
+  display: inline-block;
+  color: red;
+  font-size: 70px;
+}
+
+#ovrlay #mdl {
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+#ovrlay #mdl span {
+  display: inline-block;
+  margin: 0 30px;
+  margin-top: -20px;
+}
+
+#ovrlay p {
+  font-weight: 500;
+  color: #fff;
+  opacity: 0.6;
+  margin-top: 20px;
+  text-align: center;
+}
+
+#heading {
+  text-align: center;
+}
+
+#gola {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  margin: 0 auto;
+  pointer-events: initial !important;
+  margin-top: 50px;
+  outline: none;
+  animation: ghumaao 10s linear infinite both;
+  cursor: pointer;
+}
+
+#gola img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+#circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
+  border-radius: 50%;
+  background-color: red;
+}
+
+#gola:hover #circle {
+  background-image: url(./imgs/bg.png);
+  background-size: 330% 330%;
+  background-position: center;
+  transform: translate(-50%, -50%) scale(3);
+}
+
+#about {
+  display: flex;
+  width: 100%;
+  min-height: 50vh;
+  color: #fff;
+  background-color: black;
+  padding: 60px 50px;
+}
+
+#leftabt {
+  position: relative;
+  width: 50%;
+  min-height: inherit;
+  /* background-color: yellow; */
+}
+
+#rightabt {
+  display: flex;
+  width: 50%;
+  min-height: inherit;
+}
+
+#rightabt #frstrow,
+#scndrow {
+  margin-top: 150px;
+  opacity: 0.8;
+}
+
+#rightabt p:nth-child(2n) {
+  margin-top: 40px;
+}
+
+#leftabt h2 {
+  font-weight: 100;
+}
+
+#prlx {
+  position: absolute;
+  top: 40%;
+  right: 10%;
+  width: 400px;
+  height: 130px;
+  background-image: url(bg.png);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+#halloffame {
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 60px;
+  background-color: black;
+}
+
+#elems {
+  text-align: center;
+  margin-top: 50px;
+  color: #fff;
+}
+
+#elems p {
+  margin: 20px 0 50px 0;
+  font-weight: 100;
+}
+
+#elems h1 {
+  font-family: "Love";
+  font-weight: 100;
+  font-size: 160px;
+  line-height: 120px;
+  text-transform: uppercase;
+}
+
+#paras {
+  width: 40%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  opacity: 0.8;
+  margin-top: 30px;
+  /* background-color: red; */
+}
+
+#paras p {
+  text-align: left;
+  width: 45%;
+  font-size: 12px;
+  line-height: 17px;
+}
+
+.grids {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  background-color: black;
+}
+
+.grid1 {
+  width: 40%;
+  min-height: 100vh;
+  padding: 20px;
+  color: #fff;
+  /* background-color: red; */
+}
+
+.grid2 {
+  width: 40%;
+  min-height: 100vh;
+  color: #fff;
+  padding: 20px;
+}
+
+.grid3 {
+  width: 20%;
+  min-height: 100vh;
+  color: #fff;
+  padding: 20px;
+}
+
+.grid3 h1 {
+  font-size: 60px;
+  font-family: "Love";
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.grid2 .post.post {
+  margin-top: 150px;
+}
+
+.post {
+  margin-top: 150px;
+}
+
+.post:nth-child(1) {
+  margin-top: 80px;
+}
+
+.post .txt {
+  display: flex;
+  align-items: flex-start;
+  /* background-color: red; */
+}
+
+.post .txt h1 {
+  font-weight: 100;
+  font-size: 27px;
+}
+
+.post .txt small {
+  font-size: 12px;
+  margin-top: 5px;
+  margin-left: 10px;
+  font-family: "Consolas";
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+.pimg {
+  width: 100%;
+  height: 270px;
+  margin: 30px 0;
+  background-color: red;
+}
+
+.btmtxt h1 {
+  font-size: 26px;
+  font-weight: 100;
+  margin-bottom: 20px;
+}
+
+.btmtxt p {
+  opacity: 0.6;
+  font-size: 12px;
+}
+
+.line {
+  width: 100%;
+  height: 2px;
+  background-color: grey;
+  margin-top: 30px;
+}
+
+@keyframes ghumaao {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.smicn{
+  display: none;
+}
+
+footer{
+  text-align: center;
+  color: #fff;
+  font-size: 12px;
+  margin-top: 30px;
+  padding: 50px 0;
+}
+
+
+@media(max-width: 550px){
+  nav{
+    padding: 0 20px;
+    background-color: rgba(0, 0, 0, 0.197) !important;
+    backdrop-filter: blur(5px);
+  }
+  nav #left{
+    display: none;
+  }
+  nav #right{
+    display: none;
+  }
+  .smicn{
+    display: initial;
+    color: #fff;
+    margin: 0;
+  }
+  #hero{
+     min-height: 70vh;
+  }
+  #landing{
+    width: 100%;
+    height: initial;
+  }
+  #landing canvas{
+    height: 100%;
+    width: initial;
+  }
+
+  #ovrlay{
+    pointer-events: all;
+    padding-top: 150px;
+  }
+
+  #ovrlay h1{
+    font-size: 50px;
+    line-height: 55px;
+  }
+
+  #ovrlay h1 span{
+    font-size: 30px;
+    margin: 0 10px !important;
+    margin-top: 0px;
+  }
+
+  #ovrlay p{
+    font-size: 12px;
+    width: 60%;
+    margin-top: 20px !important;
+    margin: 0 auto;
+  }
+
+  #gola{
+    width: 100px;
+    height: 100px;
+    margin-top: 70px;
+  }
+  
+  #gola:hover #circle{
+    transform: translate(-50%, -50%) scale(2);
+  }
+  #about{
+   padding: 30px 0px;
+   min-height: 10vh;
+   flex-direction: column; 
+  }
+  #leftabt{
+    width: 100%;
+    padding-left: 15px;
+  }
+  #leftabt #prlx{
+    position: static;
+    width: 80%;
+    height: 100px;
+    margin-top: 50px;
+  }
+  #rightabt{
+    width: 100%;
+    padding: 0 15px;
+    flex-direction: column;
+  }
+  #rightabt #frstrow{
+    width: 100%;
+    margin-top: 100px;
+  }
+  #scndrow{
+    margin-top: 40px;
+  }
+  #halloffame{
+    padding-top: 10px;
+  }
+  #elems{
+    margin-top: 30px;
+  }
+  #elems p{
+    margin: 20px 0 30px 0;
+  }
+  #elems h1{
+    line-height: 130px;
+  }
+  #paras{
+    width: 90%;
+  }
+  .grids{
+    flex-direction: column-reverse;
+  }
+  .grid1{
+    width: 100%;
+  }
+  .grid2{
+    width: 100%;
+  }
+  .grid3{
+    width: 100%;
+    min-height: initial;
+    background-color: black;
+  }
+  .post:nth-child(1){
+    margin-top: 30px;
+  }
+  .post{
+    margin-top: 70px;
+  }
+  .grid2 .post.post{
+    margin-top: 70px;
+  }
+  footer{
+    width: 70%;
+    margin: 0 auto;
+    line-height: 15px;
+  }
+}
